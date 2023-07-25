@@ -6,7 +6,7 @@ const RightHeaderComponent = () => {
         <section className='userRightBlock'>
             <article>
                 <header>
-                    <h4>Stage Master</h4>
+                    <h3 style={{marginLeft:"3rem"}}>Stage Master</h3>
                     <StageMaster/>
                     {/* <input type="text" placeholder='Filter By Process Id'/> */}
                     {/* <PaginationStageMaster/> */}

@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Modal, message, Table } from "antd";
+import { Modal, message, Table, Image } from "antd";
 import "./StageMaster.css";
 // import Popup from 'reactjs-popup';
 import "reactjs-popup/dist/index.css";
 import axios from "axios";
 import { Button, Select, Form, Input, Space } from "antd";
 import { PlusCircleFilled } from "@ant-design/icons";
+import chatbotlogo from '../../images/CB LOGO.png'
+import chatbottext from '../../images/ChatBot.png'
 
 const StageMaster = () => {
   const [form] = Form.useForm();
@@ -29,7 +31,7 @@ const StageMaster = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [id, setId] = useState("");
-  
+
   const [editagenttype, seteditAgentType] = useState("");
   const [editcustomertype, seteditCustomerType] = useState("");
   const [editcheckpoint, seteditCheckpoint] = useState("");
@@ -47,6 +49,7 @@ const StageMaster = () => {
       title: "Stage Code",
       dataIndex: "stage_Code",
       key: "Stage Code",
+      width: 300,
     },
     {
       title: "Stage Label",
@@ -104,7 +107,7 @@ const StageMaster = () => {
       key: "action",
       render: (record) => (
         <>
-          <Button onClick={()=>modalcontent(record)}>Edit</Button>
+          <Button onClick={() => modalcontent(record)}>Edit</Button>
           <Button>Delete</Button>
         </>
       ),
@@ -127,14 +130,14 @@ const StageMaster = () => {
 
   const modalcontent = (value) => {
     setIsEditOpen(true);
-    console.log(value,"console")
+    console.log(value, "console")
     setId(value._id)
     Editform.setFieldsValue({
       editstagecode: value.stage_Code,
       editstagelabel: value.stage_Label,
       editstagedescription: value.stage_Description,
       editshortname: value.stage_Short_Name,
-      editproductcode:value.product_Code,
+      editproductcode: value.product_Code,
       editcutomertype: value.customer_Type,
       editcomplexity: value.stage_Complexity,
       editchatbot: value.chat_Bot,
@@ -845,6 +848,24 @@ const StageMaster = () => {
           </Form>
         </Modal>
       </div>
+
+      <div>
+        <div className="header-1">
+          <div>
+            <Image src={chatbotlogo} preview={false} width={30} />
+            <Image src={chatbottext} preview={false} width={60} />
+          </div>
+          <div>
+            <p style={{fontSize:"20px"}}>iorta</p>
+          </div>
+
+
+        </div>
+      </div>
+
+
+
+
       <section className="stageMaster">
         <article>
           <div className="buttonBlock">
@@ -882,12 +903,19 @@ const StageMaster = () => {
             </button>
           </div>
           <div>
-            <input type="text" placeholder="Search" />
+            <input style={{width:"200px", marginLeft:"10rem"}} type="text" placeholder="Search" />
           </div>
+          <Button style={{backgroundColor: "darkseagreen",}}>Activity</Button>
         </article>
       </section>{" "}
       <div className="table-scroll">
-        <Table loading={loading} dataSource={fetchdata} columns={columns} />;
+        <Table loading={loading} dataSource={fetchdata} columns={columns} />
+      </div> <br/>
+
+      <div style={{marginLeft:"700px"}}>
+        <Button className="bottom-button">INACTIVE</Button>
+        <Button className="bottom-button">DESELECT ALL</Button>
+        <Button className="bottom-button">SELECT ALL</Button>
       </div>
     </>
   );
