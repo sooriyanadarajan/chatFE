@@ -1,0 +1,101 @@
+
+#userBlock{
+background-color: (250, 245, 245);
+height: 100vh;
+}
+#userBlock article{
+display: flex;
+height: 100vh;
+width: 256px;
+}
+.userLeftBlock{
+display: flex;
+flex-direction: column; 
+flex-basis: 20%;
+background-color: rgb(250, 245, 245);
+color: #111;
+height: 700px;
+border-style: 1px black solid;
+border-right: 1px rgb(182, 177, 177) solid;
+}
+.userRightBlock{
+    flex-direction: column;
+    flex-basis: 80%;
+    height: 700px;
+}
+
+
+.userLeftBlock article span div:nth-child(1){
+height: 35px;
+margin: 7px;
+display: flex;
+justify-content: space-between;
+}
+
+.userLeftBlock article span div:nth-child(2){
+line-height: 40px;
+margin: 5px;
+}
+.userLeftBlock article span div header{
+color: rgb(68, 66, 66);
+}
+
+
+.dropdown{
+    position: absolute;
+    left: 0;
+    width: 300px;
+}
+.dropdown ul{
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    font-size: bold;
+    line-height: 40px;
+}
+.dropdown ul li{
+    padding: 8px 12px;
+    font-weight: bold;
+}
+.dropdown ul li:nth-child(2){
+    border-bottom: 1px solid #8a8787;
+    width: 85%;
+}
+.dropdown ul li:nth-child(4){
+    border-bottom: 1px solid #8a8787;
+    width: 85%;
+}
+.dropdown ul li:hover{
+    cursor: pointer;
+}
+
+.paginationTable{
+    margin: 20px;
+    border-radius: 3px;
+    border: 1px solid rgb(204, 197, 197);
+    text-align: center;
+    width: 1020px;
+    line-height: 40px;
+}
+.paginationTable thead tr{
+    border: 1px solid rgb(204, 197, 197);
+    line-height: 30px;
+    font-weight:10;
+    font-size: larger;
+
+}
+
+.paginationTable thead tr th{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:10;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* .checkBox{
+} */
+
+
+
+
+
